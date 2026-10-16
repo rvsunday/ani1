@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffe4ef">
+<title>Happy 1 Month ที่รัก ♡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&family=Pridi:wght@300;400;500&family=Noto+Sans+Thai:wght@300;400;500&display=swap">
+<style>
+:root{
+  --night:#fff0f6; --night2:#f5eaff; --amber:#d86a91; --rose:#e85f9b;
+  --cream:#fffdfb; --plum:#59334f; --muted:#765d78;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;min-height:100vh;overflow-x:hidden;color:var(--plum);
+  font-family:"Noto Sans Thai","Sukhumvit Set","Thonburi",sans-serif;font-weight:400;
+  background:linear-gradient(145deg,#fff3d9 0%,#ffe2ed 36%,#f4e5ff 68%,#dff6ff 100%);
+  background-attachment:fixed;
+}
+button{font:inherit}
+/* แสงโบเก้ด้านหลังหน้าต่าง */
+.bokeh{position:fixed;border-radius:50%;filter:blur(26px);pointer-events:none;z-index:0;animation:drift 9s ease-in-out infinite}
+.b1{width:190px;height:190px;top:8%;left:-30px;background:rgba(255,190,92,.48)}
+.b2{width:160px;height:160px;top:30%;right:-20px;background:rgba(255,119,178,.36);animation-delay:-3s}
+.b3{width:200px;height:200px;bottom:6%;left:12%;background:rgba(255,204,117,.34);animation-delay:-5s}
+.b4{width:150px;height:150px;bottom:24%;right:14%;background:rgba(151,183,255,.34);animation-delay:-2s}
+#rain{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.page{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;padding:48px 20px 70px;text-align:center}
+
+.eyebrow{font-size:.78rem;letter-spacing:.32em;color:#b85a7d;text-transform:uppercase}
+h1{margin:18px 0 6px;font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;
+  font-size:clamp(3rem,14vw,6.2rem);line-height:1;color:#743b69;text-shadow:0 3px 18px rgba(255,255,255,.75)}
+h1 small{display:block;margin-top:10px;font-family:"Pridi",serif;font-style:normal;font-weight:300;
+  font-size:clamp(1.4rem,5vw,2rem);color:#d64f8b;letter-spacing:.04em}
+.subtitle{max-width:400px;margin:18px auto 0;font-size:1rem;line-height:2;color:var(--muted)}
+
+/* กบบนใบบัว */
+.pond{position:relative;width:min(78vw,260px);height:min(78vw,260px);margin:26px auto 8px;display:grid;place-items:center}
+.pad{display:none}
+.ripple{position:absolute;left:50%;bottom:6px;width:60px;height:20px;border:1px solid rgba(255,255,255,.35);
+  border-radius:50%;translate:-50% 0;animation:ripple 3.4s ease-out infinite;opacity:0}
+.ripple.r2{animation-delay:-1.7s}
+.frog-sticker{position:absolute;left:50%;top:50%;width:100%;height:100%;object-fit:contain;transform:translate(-50%,-50%);transform-origin:50% 70%;animation:stickerWiggle 2.8s ease-in-out infinite;filter:drop-shadow(0 8px 16px rgba(0,0,0,.18))}
+@keyframes stickerWiggle{0%,100%{transform:translate(-50%,-50%) rotate(0deg) scale(1)}20%{transform:translate(-50%,calc(-50% - 5px)) rotate(-2deg) scale(1.015)}40%{transform:translate(-50%,-50%) rotate(2deg) scale(1.015)}60%{transform:translate(-50%,calc(-50% - 3px)) rotate(-1deg) scale(1.01)}80%{transform:translate(-50%,-50%) rotate(1deg) scale(1)}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:13px 30px;
+  border-radius:999px;cursor:pointer;font-family:"Pridi",serif;font-weight:400;font-size:1rem;letter-spacing:.02em;
+  transition:transform .25s,box-shadow .25s,background .25s}
+.btn.main{border:0;color:#3a2036;background:linear-gradient(135deg,#ffd9b0,var(--amber));
+  box-shadow:0 10px 36px rgba(255,184,119,.35)}
+.btn.main:hover{transform:translateY(-2px);box-shadow:0 14px 44px rgba(255,184,119,.5)}
+.btn.main:disabled{opacity:.6;cursor:default;transform:none}
+.btn.ghost{color:#704666;border:1px solid rgba(154,91,139,.24);background:rgba(255,255,255,.66);backdrop-filter:blur(8px)}
+.btn.ghost:hover{background:rgba(255,255,255,.88)}
+.btn:focus-visible{outline:2px solid var(--amber);outline-offset:4px}
+.date-note{margin:20px 0 0;font-size:.84rem;color:var(--muted);letter-spacing:.03em}
+
+.counter{width:min(100%,480px);margin-top:42px;padding:22px 16px 18px;border:1px solid rgba(255,255,255,.82);
+  border-radius:26px;background:rgba(255,255,255,.48);backdrop-filter:blur(14px);box-shadow:0 20px 60px rgba(145,86,130,.14)}
+.counter h3{margin:0 0 14px;font-family:"Pridi",serif;font-weight:300;font-size:.95rem;color:var(--amber);letter-spacing:.08em}
+.units{display:grid;grid-template-columns:repeat(4,1fr)}
+.unit{padding:2px 0;border-left:1px solid rgba(255,255,255,.12)}
+.unit:first-child{border-left:0}
+.unit b{display:block;font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(2rem,9vw,2.9rem);
+  line-height:1.1;color:#743b69;font-variant-numeric:tabular-nums}
+.unit span{font-size:.74rem;color:var(--muted);letter-spacing:.1em}
+.countdown{margin:14px 0 0;font-size:.9rem;color:var(--rose)}
+
+.letter-wrap{width:min(100%,560px);margin-top:40px;text-align:left;animation:unfold .8s cubic-bezier(.2,.8,.2,1) both}
+.letter-wrap[hidden]{display:none}
+.letter{padding:clamp(26px,6vw,44px);border-radius:6px 6px 24px 24px;color:var(--plum);
+  background:radial-gradient(circle at 100% 0,rgba(255,159,189,.28),transparent 40%),var(--cream);
+  box-shadow:0 30px 80px rgba(0,0,0,.45),0 0 70px rgba(255,184,119,.18)}
+.letter h2{margin:0 0 16px;font-family:"Pridi",serif;font-weight:500;font-size:1.5rem;color:#a8426b}
+.letter p{margin:0 0 14px;font-family:"Pridi",serif;font-weight:300;line-height:2.05;font-size:1.02rem;
+  opacity:0;animation:rise .8s ease forwards}
+.letter p:nth-of-type(1){animation-delay:.4s}.letter p:nth-of-type(2){animation-delay:1s}
+.letter p:nth-of-type(3){animation-delay:1.8s}.letter p:nth-of-type(4){animation-delay:2.5s}
+.letter p:nth-of-type(5){animation-delay:3.3s}
+.letter .signoff{margin:22px 0 0;text-align:right;font-weight:500;color:#a8426b}
+.letter-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:22px}
+.music-status{min-height:1.4em;margin:10px 0 0;font-size:.8rem;text-align:center;color:var(--muted)}
+.footer{margin-top:46px;font-size:.78rem;color:rgba(111,75,111,.72);letter-spacing:.12em}
+
+.floating-heart{position:fixed;bottom:-40px;z-index:6;pointer-events:none;animation:floatUp var(--d,3s) ease-out forwards;
+  filter:drop-shadow(0 0 8px rgba(255,159,189,.6))}
+.frog-run{position:fixed;bottom:20px;left:-60px;z-index:6;font-size:2.2rem;pointer-events:none;animation:hop 4.5s linear forwards}
+
+
+.timeline{display:none;margin-top:40px;text-align:center}
+.timeline.show{display:block;animation:unfold .9s cubic-bezier(.2,.8,.2,1) both}
+.timeline h3{margin:0 0 6px;font-family:"Pridi",serif;font-weight:300;font-size:1.05rem;color:var(--amber);letter-spacing:.08em}
+.stage{position:relative;height:310px;perspective:900px;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none}
+.stage:active{cursor:grabbing}
+.ring{position:absolute;left:50%;top:52%;width:0;height:0;transform-style:preserve-3d}
+.photo{position:absolute;width:150px;height:205px;margin:-102px 0 0 -75px;padding:8px 8px 0;border-radius:6px;
+  background:var(--cream);color:var(--plum);box-shadow:0 14px 34px rgba(0,0,0,.45)}
+.pic{height:150px;border-radius:3px;overflow:hidden;background:linear-gradient(135deg,#ffd9b0,#ff9fbd)}
+.pic img,.pic video{display:block;width:100%;height:100%;object-fit:cover}
+.pic img{pointer-events:none}
+.pic video{position:relative;z-index:2;background:#120f20;cursor:pointer}
+.ph{height:100%;display:grid;place-content:center;font-size:2.4rem;line-height:1.4}
+.ph small{font:300 .7rem "Noto Sans Thai",sans-serif}
+.photo figcaption{padding:8px 0;font:400 .72rem "Pridi",serif;text-align:center}
+.tcap{min-height:3.6em;margin-top:4px}
+.tdate{font-size:.8rem;letter-spacing:.12em;color:var(--amber)}
+.tmsg{margin-top:2px;font:300 1rem "Pridi",serif;color:var(--plum)}
+.tnav{display:flex;justify-content:center;gap:12px;margin-top:8px}
+.tnav .btn{width:auto;min-height:44px;padding:8px 24px;font-size:1.3rem}
+
+@keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(18px,-22px)}}
+@keyframes bob{0%,100%{translate:-50% 0}50%{translate:-50% -5px}}
+@keyframes ripple{0%{transform:scale(.6);opacity:.6}100%{transform:scale(2);opacity:0}}
+@keyframes unfold{from{opacity:0;transform:translateY(24px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes floatUp{from{transform:translateY(0) rotate(0);opacity:0}12%{opacity:1}to{transform:translateY(-110vh) rotate(24deg);opacity:0}}
+@keyframes hop{0%{transform:translate(0,0)}12.5%,37.5%,62.5%,87.5%{transform:translate(14vw,-34px)}25%,50%,75%,100%{transform:translate(26vw,0)}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important}}
+@media (max-width:480px){.btn{width:100%}.letter-actions .btn{flex:1;padding-inline:14px}}
+</style>
+</head>
+<body>
+<span class="bokeh b1" aria-hidden="true"></span><span class="bokeh b2" aria-hidden="true"></span>
+<span class="bokeh b3" aria-hidden="true"></span><span class="bokeh b4" aria-hidden="true"></span>
+<canvas id="rain" aria-hidden="true"></canvas>
+
+<main class="page">
+  <div class="eyebrow">A letter for you</div>
+  <h1>Happy 1 Month,<small>ที่รัก ♡</small></h1>
+  <p class="subtitle">หนึ่งเดือนของเราแล้วนะคนเก่ง<br>มีเรื่องนึงที่อยากบอก… แต่ต้องเปิดจดหมายก่อนนะ อิอิ</p>
+
+  <div class="pond" aria-hidden="true">
+    <img class="frog-sticker" src="assets/santa2.png" alt="สติกเกอร์สาวน้อยซานต้าน่ารัก">
+  </div>
+
+  <button class="btn main" id="openLetterBtn" type="button">💌 เปิดจดหมายจากใจ</button>
+  <p class="date-note"> ครบรอบ 1 เดือน 16 ตุลาคม 2026 ♡ หวยออก </p>
+
+  <section class="counter" aria-label="นับเวลาที่เราอยู่ด้วยกัน">
+    <h3>เราอยู่ด้วยกันมาแล้ว</h3>
+    <div class="units">
+      <div class="unit"><b id="cDays">0</b><span>วัน</span></div>
+      <div class="unit"><b id="cHours">0</b><span>ชั่วโมง</span></div>
+      <div class="unit"><b id="cMins">0</b><span>นาที</span></div>
+      <div class="unit"><b id="cSecs">0</b><span>วินาที</span></div>
+    </div>
+    <p class="countdown" id="countdown"></p>
+  </section>
+
+  <section class="letter-wrap" id="letterWrap" hidden aria-live="polite">
+    <article class="letter">
+      <h2>ถึงที่รักของเค้า 💗</h2>
+      <p>สุขสันต์วันครบรอบ 1 เดือนนะที่รัก 🥺💕</p>
+      <p>ขอบคุณที่เข้ามาเป็นความน่ารักในทุก ๆ วัน ขอบคุณที่ทำให้เรื่องธรรมดากลายเป็นเรื่องพิเศษ แค่ได้คุยด้วยก็ทำให้ยิ้มได้แล้วนะ รู้ตัวรึเปล่าา</p>
+      <p>ในวันที่ฝนตก เสียงกบก็ได้บอกรักนะอ๊บอบ💕💢</p>
+      <p>ถ้าเสียงกบยังบอกรักได้ เค้าก็อยากบอกรักที่รักไปเรื่อย ๆ เลยนะ ขอให้เราได้สร้างความทรงจำด้วยกันอีกเยอะ ๆ ผ่านทั้งวันที่สดใสและวันที่ฝนตกเลย 🐸🌧️</p>
+      <p class="signoff">รักที่รักที่สุดเลยนะ อ๊บอบบบ 💗🐸</p>
+    </article>
+
+    <section class="timeline" id="timeline" aria-label="ไทม์ไลน์ความทรงจำของเรา">
+      <h3>ความทรงจำของเรา ✨</h3>
+      <div class="stage" id="stage"><div class="ring" id="ring"></div></div>
+      <div class="tcap"><div class="tdate" id="tDate"></div><div class="tmsg" id="tMsg"></div></div>
+      <div class="tnav">
+        <button class="btn ghost" id="tPrev" type="button" aria-label="รูปก่อนหน้า">‹</button>
+        <button class="btn ghost" id="tNext" type="button" aria-label="รูปถัดไป">›</button>
+      </div>
+    </section>
+    <div class="letter-actions">
+      <button class="btn ghost" id="closeLetterBtn" type="button">💌 พับจดหมาย</button>
+      <button class="btn ghost" id="musicBtn" type="button">🎵 เล่นเพลง</button>
+    </div>
+    <p class="music-status" id="musicStatus" role="status">เพลงจะเริ่มเมื่อเปิดจดหมาย (ต้องมีไฟล์เพลงอยู่ในโฟลเดอร์เดียวกัน)</p>
+  </section>
+
+  <p class="footer">made with love · for you and me</p>
+</main>
+
+<!-- วางไฟล์ love-song.mp3 ไว้โฟลเดอร์เดียวกับไฟล์ HTML -->
+<audio id="loveSong" loop preload="none"><source src="assets/song.mp3" type="audio/mpeg"></audio>
+
+<script>
+(() => {
+  "use strict";
+  const $ = (id) => document.getElementById(id);
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const openBtn = $("openLetterBtn"), closeBtn = $("closeLetterBtn"), wrap = $("letterWrap");
+  const song = $("loveSong"), musicBtn = $("musicBtn"), status = $("musicStatus");
+
+  // ฝน + หยดน้ำบนกระจก
+  const cv = $("rain"), ctx = cv.getContext("2d");
+  let W, H, streaks = [], beads = [];
+  function size() {
+    W = cv.width = innerWidth; H = cv.height = innerHeight;
+    streaks = Array.from({ length: 60 }, () => ({ x: Math.random() * W * 1.1, y: Math.random() * H, l: 14 + Math.random() * 18, v: 6 + Math.random() * 6 }));
+    beads = Array.from({ length: 16 }, () => ({ x: Math.random() * W, y: Math.random() * H, r: 2 + Math.random() * 3, v: .15 + Math.random() * .5 }));
+  }
+  function frame() {
+    ctx.clearRect(0, 0, W, H);
+    if (!reduce) {
+      ctx.strokeStyle = "rgba(183,111,160,.16)"; ctx.lineWidth = 1; ctx.beginPath();
+      for (const d of streaks) {
+        d.y += d.v; d.x -= d.v * .1;
+        if (d.y > H) { d.y = -30; d.x = Math.random() * W * 1.1; }
+        ctx.moveTo(d.x, d.y); ctx.lineTo(d.x + d.l * .1, d.y - d.l);
+      }
+      ctx.stroke();
+      for (const b of beads) {
+        b.y += b.v; if (b.y > H + 10) { b.y = -10; b.x = Math.random() * W; }
+        ctx.beginPath(); ctx.arc(b.x, b.y, b.r, 0, 6.283);
+        ctx.fillStyle = "rgba(255,255,255,.32)"; ctx.fill();
+        ctx.beginPath(); ctx.arc(b.x - b.r * .3, b.y - b.r * .3, b.r * .35, 0, 6.283);
+        ctx.fillStyle = "rgba(255,255,255,.72)"; ctx.fill();
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+  addEventListener("resize", size); size(); frame();
+
+  // ตัวนับเวลา
+  const start = new Date(2026, 8, 16), target = new Date(2026, 9, 16);
+  function tick() {
+    const now = new Date(), s = Math.max(0, Math.floor((now - start) / 1000));
+    $("cDays").textContent = Math.floor(s / 86400);
+    $("cHours").textContent = Math.floor(s % 86400 / 3600);
+    $("cMins").textContent = Math.floor(s % 3600 / 60);
+    $("cSecs").textContent = s % 60;
+    const left = Math.floor((target - now) / 1000);
+    $("countdown").textContent = left > 0
+      ? `อีก ${Math.floor(left / 86400)} วัน ${Math.floor(left % 86400 / 3600)} ชั่วโมง จะครบ 1 เดือนแล้วนะ 🎀`
+      : "🎉 ครบ 1 เดือนแล้ว! สุขสันต์วันครบรอบนะที่รัก";
+  }
+  tick(); setInterval(tick, 1000);
+
+  // เอฟเฟกต์
+  function floatHeart(x, bottom, px, dur) {
+    const h = document.createElement("span");
+    h.className = "floating-heart";
+    h.textContent = ["💗", "💕", "💖", "✨", "🐸"][Math.floor(Math.random() * 5)];
+    h.style.left = x; h.style.bottom = bottom; h.style.fontSize = px + "px";
+    h.style.setProperty("--d", dur + "s");
+    document.body.appendChild(h);
+    h.addEventListener("animationend", () => h.remove(), { once: true });
+  }
+  const burst = (n) => { for (let i = 0; i < n; i++) floatHeart(Math.random() * 96 + 2 + "vw", "-40px", 18 + Math.random() * 18, 2.6 + Math.random() * 2); };
+  addEventListener("pointerdown", (e) => {
+    if (reduce || e.target.closest("button")) return;
+    floatHeart(e.clientX - 10 + "px", innerHeight - e.clientY + "px", 22, 2);
+  });
+  function frogRun() {
+    const f = document.createElement("span");
+    f.className = "frog-run"; f.textContent = "🐸";
+    document.body.appendChild(f);
+    f.addEventListener("animationend", () => f.remove(), { once: true });
+  }
+
+  // เพลง
+  async function play() {
+    try {
+      await song.play();
+      musicBtn.textContent = "⏸️ หยุดเพลง";
+      status.textContent = "กำลังเล่นเพลงรักของเรา ♡";
+    } catch {
+      status.textContent = "ยังเล่นเพลงไม่ได้ — ตรวจสอบว่ามีไฟล์ love-song.mp3 อยู่ข้างไฟล์ HTML แล้วลองกดอีกครั้งนะ";
+      musicBtn.textContent = "🎵 ลองเล่นอีกครั้ง";
+    }
+  }
+  function stop() {
+    song.pause();
+    musicBtn.textContent = "🎵 เล่นเพลง";
+    status.textContent = "หยุดเพลงชั่วคราวแล้ว ♡";
+  }
+
+  // ===== วงล้อไทม์ไลน์รูปคู่ =====
+  // แก้รูป/วันที่/ข้อความตรงนี้ได้เลย: วางรูปไว้ในโฟลเดอร์ photos/ ข้างไฟล์ HTML
+  const PHOTOS = [
+    { type: "image", src: "assets/1.jpg", date: "29 ส.ค. 2026", msg: "ไอเด่กแว่นนี่มาไง 💗" },
+    { type: "image", src: "assets/2.jpg", date: "2 ส.ค. 2026", msg: "Spiderman 🕸" },
+    { type: "video", src: "assets/v1.MOV", date: "10 ต.ค. 2026", msg: "ชาบู้ 🍲🍲 " },
+    { type: "image", src: "assets/3.jpg", date: "9 ส.ค. 2026", msg: "มีคนลักพาตัวว 🎬" },
+    { type: "video", src: "assets/v2.MOV", date: "29 ส.ค. 2026", msg: "แอบหลับแล้วไม่แอบรักบ้างหรอ!! 💗" },
+    { type: "image", src: "assets/4.jpg", date: "6 ก.ย. 2026", msg: "มีคนขโมยกล้อง💕" },
+    { type: "video", src: "assets/v3.MOV", date: "20 ก.ย. 2026", msg: "ไอติมหวานเจี๊ยบ 🍨" },
+    { type: "image", src: "assets/5.jpg", date: "20 ก.ย. 2026", msg: "หิวช้อนนนน" },
+  ];
+  const tl = $("timeline"), ring = $("ring"), stage = $("stage");
+  const step = 360 / PHOTOS.length;
+  let angle = 0, snapTo = null, dragging = false, lastX = 0, front = -1, tlOn = false, tlTimer = 0, R = 160;
+
+  const cards = PHOTOS.map((p) => {
+    const c = document.createElement("figure");
+    c.className = "photo";
+    c.innerHTML = '<div class="pic"></div><figcaption></figcaption>';
+    c.querySelector("figcaption").textContent = p.date;
+    const media = p.type === "video"
+      ? document.createElement("video")
+      : new Image();
+    media.setAttribute("aria-label", p.msg);
+    if (p.type === "video") {
+      media.controls = true;
+      media.playsInline = true;
+      media.preload = "metadata";
+      media.muted = false;
+      media.addEventListener("play", () => { dragging = false; snapTo = null; });
+      media.addEventListener("error", () => {
+        c.querySelector(".pic").innerHTML = '<div class="ph">🎬<small>เปิดคลิปไม่ได้</small></div>';
+      }, { once: true });
+    } else {
+      media.alt = p.msg;
+      media.draggable = false;
+      media.onerror = () => {
+        c.querySelector(".pic").innerHTML = '<div class="ph">🐸<small>ใส่รูปของเรา</small></div>';
+      };
+    }
+    media.src = p.src;
+    c.querySelector(".pic").appendChild(media);
+    ring.appendChild(c);
+    return c;
+  });
+
+  function layout() {
+    R = Math.round((cards[0].offsetWidth / 2 + 16) / Math.tan(Math.PI / cards.length));
+    cards.forEach((c, i) => { c.style.transform = `rotateY(${i * step}deg) translateZ(${R}px)`; });
+  }
+  function render() {
+    ring.style.transform = `translateZ(${-R}px) rotateY(${angle}deg)`;
+    let best = -2, bi = 0;
+    cards.forEach((c, i) => {
+      const f = Math.cos((i * step + angle) * Math.PI / 180);
+      c.style.opacity = (.3 + .7 * (f + 1) / 2).toFixed(2);
+      c.style.zIndex = Math.round(f * 10) + 10;
+      if (f > best) { best = f; bi = i; }
+    });
+    if (bi !== front) {
+      front = bi;
+      $("tDate").textContent = PHOTOS[bi].date;
+      $("tMsg").textContent = PHOTOS[bi].msg;
+    }
+  }
+  function loop() {
+    if (!tlOn) return;
+    if (snapTo !== null) {
+      angle += (snapTo - angle) * .12;
+      if (Math.abs(snapTo - angle) < .2) { angle = snapTo; snapTo = null; }
+    } else if (!dragging && !reduce) {
+      angle -= .22;
+    }
+    render();
+    requestAnimationFrame(loop);
+  }
+  function nudge(dir) { snapTo = Math.round(angle / step) * step + dir * step; }
+  stage.addEventListener("pointerdown", (e) => {
+    // อย่าให้การกดปุ่มควบคุมวิดีโอถูกตีความว่าเป็นการลากวงล้อ
+    if (e.target.closest("video")) { dragging = false; return; }
+    dragging = true; snapTo = null; lastX = e.clientX;
+    stage.setPointerCapture(e.pointerId);
+  });
+  stage.addEventListener("pointermove", (e) => { if (dragging) { angle += (e.clientX - lastX) * .4; lastX = e.clientX; } });
+  ["pointerup", "pointercancel"].forEach((ev) => stage.addEventListener(ev, () => { dragging = false; }));
+  $("tPrev").addEventListener("click", () => nudge(1));
+  $("tNext").addEventListener("click", () => nudge(-1));
+  addEventListener("resize", () => { if (tlOn) layout(); });
+
+  function showTimeline() {
+    tl.classList.add("show");
+    layout(); tlOn = true; loop();
+  }
+  function hideTimeline() {
+    clearTimeout(tlTimer); tlOn = false; tl.classList.remove("show");
+    // หยุดคลิปเมื่อพับจดหมาย เพื่อไม่ให้เสียงเล่นต่อในพื้นหลัง
+    ring.querySelectorAll("video").forEach((video) => video.pause());
+  }
+
+  openBtn.addEventListener("click", () => {
+    wrap.hidden = false;
+    openBtn.textContent = "💗 เปิดจดหมายแล้ว";
+    openBtn.disabled = true;
+    burst(30);
+    if (!reduce) frogRun();
+    play();
+    clearTimeout(tlTimer); tlTimer = setTimeout(showTimeline, 4200);
+    wrap.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  });
+  closeBtn.addEventListener("click", () => {
+    wrap.hidden = true;
+    openBtn.disabled = false;
+    openBtn.textContent = "💌 เปิดจดหมายจากใจ";
+    stop();
+    hideTimeline();
+  });
+  musicBtn.addEventListener("click", () => (song.paused ? play() : stop()));
+  song.addEventListener("error", () => {
+    status.textContent = "หาไฟล์เพลงไม่เจอ: วาง love-song.mp3 ไว้ในโฟลเดอร์เดียวกับ HTML";
+  });
+})();
+</script>
+</body>
+</html>
